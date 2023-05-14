@@ -10,6 +10,8 @@ export const ComponentIDs = {
   basicNavbarNav: 'basicNavbarNav',
   currentUserDropdown: 'currentUserDropdown',
   currentUserDropdownSignOut: 'currentUserDropdownSignOut',
+  currentUserDropdownHome: 'currentUserDropdownHome',
+  currentUserDropdownSettings: 'currentUserDropdownSettings',
   filterFormInterests: 'filterFormInterests',
   filterFormSubmit: 'filterFormSubmit',
   filterMenuItem: 'filterMenuItem',

@@ -1,15 +1,14 @@
 import React from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 import { PageIDs } from '../utilities/ids';
+import SiteLogo from '../components/SiteLogo';
 
-/* A simple static component to render some text for the landing page. */
+/* The hub for the website. */
 const Landing = () => (
   <div id={PageIDs.landingPage}>
     <div className="landing-green-background">
       <Container className="text-center">
-        <h1 style={{ paddingTop: '20px', color: 'white', fontSize: '36pt' }}>
-          Boardum
-        </h1>
+        <SiteLogo style={{ fontWeight: 800, fontSize: '48px' }} />
         <h3 style={{ paddingBottom: '20px', color: 'white' }}>
           Profiles, projects, and interest areas for the UH Community
         </h3>

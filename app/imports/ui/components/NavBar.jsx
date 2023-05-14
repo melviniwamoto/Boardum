@@ -2,12 +2,10 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChessBoard } from '@fortawesome/free-solid-svg-icons/faChessBoard';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { ComponentIDs } from '../utilities/ids';
-import AccountDropdown from './AccountDropdown';
+import AccountCollapse from './AccountCollapse';
+import SiteLogo from './SiteLogo';
 
 const NavBar = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
@@ -16,19 +14,25 @@ const NavBar = () => {
     loggedIn: !!Meteor.user(),
   }), []);
   const menuStyle = { marginBottom: '0px' };
+  const logoStyle = {
+    fontSize: '24px',
+    fontWeight: '600',
+  };
   const navbarClassName = loggedIn ? 'bg-dark' : 'bg-light';
   return (
-    <Navbar expand="lg" style={menuStyle} className={navbarClassName}>
+    <Navbar
+      expand="lg"
+      style={menuStyle}
+      className={navbarClassName}
+      sticky="top"
+    >
       <Container>
         <Navbar.Brand as={NavLink} to="/" className="align-items-center">
-          <span style={{ fontWeight: 800, fontSize: '24px' }}><FontAwesomeIcon icon={faChessBoard} /> Boardum</span>
+          <SiteLogo style={logoStyle} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={ComponentIDs.basicNavbarNav} />
         <Navbar.Collapse id={ComponentIDs.basicNavbarNav}>
           <Nav className="me-auto justify-content-start">
-            {currentUser ? (
-              <Nav.Link as={NavLink} id={ComponentIDs.homeMenuItem} to="/home" key="home">Home</Nav.Link>
-            ) : ''}
             <Nav.Link as={NavLink} id={ComponentIDs.profilesMenuItem} to="/profiles" key="profiles">Profiles</Nav.Link>
             <Nav.Link as={NavLink} id={ComponentIDs.projectsMenuItem} to="/projects" key="projects">Projects</Nav.Link>
             <Nav.Link as={NavLink} id={ComponentIDs.interestsMenuItem} to="/interests" key="interests">Interests</Nav.Link>
@@ -37,7 +41,7 @@ const NavBar = () => {
                 <Nav.Link as={NavLink} id={ComponentIDs.filterMenuItem} to="/filter" key="filter">Filter</Nav.Link>]
             ) : ''}
           </Nav>
-          <AccountDropdown />
+          <AccountCollapse />
         </Navbar.Collapse>
       </Container>
     </Navbar>
