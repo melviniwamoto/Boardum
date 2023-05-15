@@ -1,4 +1,10 @@
 export const ComponentIDs = {
+  navbarAccountDropdown: 'navbarAccountDropdown',
+  navbarHome: 'navbarUserHome',
+  navbarSettings: 'navbarUserSettings',
+  navbarSignOut: 'navbarUserSignOut',
+  navbarSignIn: 'navbarUserSignIn',
+  navbarSignUp: 'navbarUserSignUp',
   addProjectMenuItem: 'addProjectMenuItem',
   addProjectFormName: 'addProjectFormName',
   addProjectFormPicture: 'addProjectFormPicture',
@@ -21,7 +27,6 @@ export const ComponentIDs = {
   homeFormSubmit: 'homeFormSubmit',
   homeMenuItem: 'homeMenuItem',
   interestsMenuItem: 'interestsMenuItem',
-  loginDropdown: 'loginDropdown',
   loginDropdownSignIn: 'loginDropdownSignIn',
   loginDropdownSignUp: 'loginDropdownSignUp',
   profilesMenuItem: 'profilesMenuItem',

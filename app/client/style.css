@@ -3,49 +3,49 @@
 
 /* Create some Boardum CSS variables. */
 :root {
-  --boardum-navbar-bg: #376551;
-  --boardum-navbar-bg-rgb: 55, 101, 81;
-  --boardum-navbar-text: white;
-  --boardum-navbar-highlight-text: var(--bs-gray-500);
+  --site-navbar-bg: #376551;
+  --site-navbar-bg-rgb: 55, 101, 81;
+  --site-navbar-text: black;
+  --site-navbar-highlight-text: var(--bs-gray-500);
 }
 /* Change bootstrap variable values.
  See https://getbootstrap.com/docs/5.2/customize/css-variables/
  */
 body {
-  --bs-dark: var(--boardum-navbar-bg);
-  --bs-dark-rgb: var(--boardum-navbar-bg-rgb);
+  --bs-dark: var(--site-navbar-bg);
+  --bs-dark-rgb: var(--site-navbar-bg-rgb);
 }
 
 /* Color the light Brand and links with dark color */
 .bg-light span, .bg-light a {
-  color:  var(--boardum-navbar-bg);
+  color:  var(--site-navbar-bg);
 }
 
 /* When logged in we switch the NavBar to bg-dark so we need to override the styles to give light text. */
 .bg-dark span, .bg-dark a {
-  color: var(--boardum-navbar-text);
+  color: var(--site-navbar-text);
 }
 
 /* When logged in we highlight the selected route. */
 .bg-dark a.nav-link.active {
-  color: var(--boardum-navbar-highlight-text);
+  color: var(--site-navbar-highlight-text);
 }
 
 /* Override the color on the dropdown when logged in. */
 .bg-dark a.dropdown-item {
-  color: var(--boardum-navbar-bg);
+  color: var(--site-navbar-bg);
 }
 
 /* Landing page color blocking */
 .landing-green-background {
-  background-color: var(--boardum-navbar-bg);
-  color: var(--boardum-navbar-text);
+  background-color: var(--site-navbar-bg);
+  color: var(--site-navbar-text);
   padding-top: 20px;
 }
 
 .landing-white-background {
-  background-color: var(--boardum-navbar-text);
-  color: var(--boardum-navbar-bg);
+  background-color: var(--site-navbar-text);
+  color: var(--site-navbar-bg);
   padding-top: 20px;
 }
 
@@ -56,4 +56,31 @@ body {
 
 .dropdown-toggle::after {
   display: none !important;
+}
+
+.btn-primary {
+  /* Normal Colors */
+  --bs-btn-bg: var(--site-navbar-bg) !important;
+  --bs-btn-color: var(--site-navbar-text) !important;
+  --bs-btn-border-color: var(--site-navbar-text) !important;
+  /* Hover Colors */
+  --bs-btn-hover-bg: var(--site-navbar-bg) !important;
+  --bs-btn-hover-color: var(--site-navbar-highlight-text) !important;;
+  --bs-btn-hover-border-color: var(--site-navbar-highlight-text) !important;
+  /* Active Colors (Pressed) */
+  --bs-btn-active-bg: var(--site-navbar-text) !important;;
+  --bs-btn-active-color: var(--site-navbar-bg) !important;
+  --bs-btn-active-border-color: var(--site-navbar-bg) !important;
+}
+
+.btn-outline-primary {
+  --bs-btn-bg: var(--site-navbar-text) !important;
+  --bs-btn-color: var(--site-navbar-bg) !important;
+}
+
+.navbar-nav {
+  --bs-nav-link-padding-y: 0 !important;
+}
+.footer {
+
 }

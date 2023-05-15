@@ -4,9 +4,7 @@ import { faChessBoard, faDiceFive } from '@fortawesome/free-solid-svg-icons';
 import { WebSite } from '../../startup/both/WebSite';
 
 const SiteLogo = ({ style }) => (
-  <span
-    style={style}
-  >
+  <span style={style}>
     <FontAwesomeIcon icon={faChessBoard} />
     {` ${WebSite.name} `}
     <FontAwesomeIcon icon={faDiceFive} />
